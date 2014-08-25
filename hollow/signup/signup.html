@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>注册</title>
+	<link rel="stylesheet" type="text/css" href="signup.css">
+	<script language='javascript'>
+	function checkInput(input)
+	{
+		var value=input.value;
+		//var id=input.id+'_tip';
+		switch(input.id)
+		{
+			case 'username_input':
+				var reg = new RegExp("^.{2,}$");
+				if(!reg.test(value))
+					username_input_tip.innerText="用户名至少两位";
+				else
+					username_input_tip.innerText="用户名输入正确";
+				break;
+			case 'password_input':
+				var reg = new RegExp("^.{5,17}$");
+				if(!reg.test(value))
+					password_input_tip.innerText="密码5,17位";
+				else
+					password_input_tip.innerText="密码输入正确";
+				break;
+			default:
+			 return true;
+
+		}
+
+	}
+	function login(){
+		var username=document.getElementById('username_input').value;
+		var password=document.getElementById('password_input').value;
+		var email=document.getElementById('email_input').value;
+		if(!username||!password||!email)
+		{
+		submit_tip.innerText="请填写完整所有项";	
+		return false;
+		}
+	}
+	</script>
+</head>
+<body>
+<div class='sign'>
+	<div class='logo'><a href='index.php' title="返回首页"></a></div>
+</div>
+
+<div class='signup_block'>
+	<form action="signup_process.php" method="post" onsubmit="return login()">
+	<div class='input_block'>
+		<input id='username_input' name='username' type='text' placeholder='用户名' maxlength="15" onblur="checkInput(this)">
+		<span id='username_input_tip'></span>
+		</br>
+		<input id='password_input' name='password' type="password" placeholder='密码' onblur="checkInput(this)">
+		<span id='password_input_tip'></span></br>
+		<input id='email_input' name='email' type="email" placeholder='电子邮箱'></br>
+		<input id='submit' type="submit" value="注册账号"></br>
+		<div id='submit_tip'></div>
+	</div>
+	</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+.logo a{
+background: url('images/logo.jpg') no-repeat;
+height: 72px;
+width: 500px;
+display: block;
+margin:0 auto;
+}
+.input_block{
+	margin:0 auto;
+	width:500px;
+}
+.input_block input{
+	margin-top: 10px;
+	width:190px;
+	height: 38px;
+}
+#username_input_tip,#password_input_tip{
+	font:cursive bold;
+}
+#submit{
+background: #f1ede3;
+}
+#submit_tip{
+	width:190px;
+	color: #FF0000;
+	background: #f1ede3;
+	margin-top: 10px;
+	text-align: center;
+}
