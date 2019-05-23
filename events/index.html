@@ -110,7 +110,15 @@
             font-weight: bold;
 	    font: 32px/1.5 'Open Sans Condensed',sans-serif;
         }
-
+	.nextEvent{
+	    position: fixed;
+            top: 10px;
+            right: 80px;
+            text-align: right;
+            width: 100%;
+            font-weight: bold;
+	    font: 20px/1.5 'Open Sans Condensed',sans-serif;
+	}
         .text-right {
             position: fixed;
             bottom: 50px;
@@ -222,14 +230,15 @@
     <span id="span_dt_dt"></span>
 </span>
 <span id = "count">
-<span id="note" style="color: #FFF;">Events: Back home 🛩 🎉🎉🎉</span>
+<span  id="note" style="color: #FFF;">Events: Back home 🛩 🎉🎉</span>
+<span class = "nextEvent" style="color: #FFF;">Next:OSL🛩 CTU</span>
 <span id="countdown" style="float:top right"></span>
 </span>
 
 <script language="javascript">
     function show_date_time() {
         window.setTimeout("show_date_time()", 1000);
-        BirthDay = new Date("10/16/2018 00:00:00");//这个日期是可以修改的
+        BirthDay = new Date("10/16/2018 00:00:00");
         today = new Date();
         timeold = (today.getTime() - BirthDay.getTime());
         sectimeold = timeold / 1000
@@ -256,8 +265,7 @@
         init: function () {
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
-			//想说的话
-            // S.UI.simulate("Yue|想你|是我钻心的痛|多多指教|#countdown 3|#time");
+            // S.UI.simulate("想你|是我钻心的痛|多多指教|#countdown 3|#time");
             S.UI.simulate("想你|真的痛|爱你|余生难忘|走吧|我娶你|余生好长请多指教");
             S.Drawing.loop(function () {
                 S.Shape.render();
